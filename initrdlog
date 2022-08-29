@@ -1,0 +1,430 @@
+Script started on Mon 29 Aug 2022 03:29:46 AM UTC
+]0;vagrant@localhost:/home/vagrant[?1034h[root@localhost vagrant]# vgs
+  VG         #PV #LV #SN Attr   VSize   VFree
+  VolGroup00   1   2   0 wz--n- <38.97g    0 
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# lvs
+  LV       VG         Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  LogVol00 VolGroup00 -wi-ao---- <37.47g                                                    
+  LogVol01 VolGroup00 -wi-ao----   1.50g                                                    
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# vgrename v[KVolGroup00 VG_ROOT
+  Volume group "VolGroup00" successfully renamed to "VG_ROOT"
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# vi /etc/fstab 
+[?1049h[?1h=[1;29r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[29;1H"/etc/fstab" 11L, 481C[2;1H#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/VolGroup00-LogVol00 /[23Cxfs     defaults        [10;1H 0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot[19Cxfs     defauu[12;1Hlts[8C0 0
+/dev/mapper/VolGroup00-LogVol01 swap[20Cswap    defaults        [14;1H 0 0
+[94m~                                                                              [16;1H~                                                                              [17;1H~                                                                              [18;1H~                                                                              [19;1H~                                                                              [20;1H~                                                                              [21;1H~                                                                              [22;1H~                                                                              [23;1H~                                                                              [24;1H~                                                                              [25;1H~                                                                              [26;1H~                                                                              [27;1H~                                                                              [28;1H~                                                                              [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+[9;1H[m/dev/mapper/VolGroup00[?25l[29;1H[1m-- INSERT --[m[29;14H[K[9;22H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults         [10;1H0 0[10;4H[K[9;21H[?12l[?25h[?25l0-LogVol00 / [22Cxfs     defaults [7C00[10;1H 0[10;3H[K[9;20H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults [7C0  [10;1H0[10;2H[K[9;20H[?12l[?25h[?25l[9;28r[28;1H
+[1;29r[9;1H/dev/mapper/VolGro-LogVol00 /[23Cxfs     defaults[8C0 0[28;1H[94m~                                                                              [9;19H[?12l[?25h[?25l[m-LogVol00 / [22Cxfs     defaults [7C0 0[9;79H[K[9;18H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults [7C0 0[9;78H[K[9;17H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults [7C0 0[9;77H[K[9;16H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults [7C0 0[9;76H[K[9;15H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults [7C0 0[9;75H[K[9;14H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults [7C0 0[9;74H[K[9;13H[?12l[?25h[?25lV-LogVol00 /[22C xfs     defaults[7C 0 0[9;14H[?12l[?25h[?25lG-LogVol00 /[22C xfs     defaults[7C 0 0[9;15H[?12l[?25h[?25l_-LogVol00 /[22C xfs     defaults[7C 0 0[9;16H[?12l[?25h[?25lR-LogVol00 /[22C xfs     defaults[7C 0 0[9;17H[?12l[?25h[?25lO-LogVol00 /[22C xfs     defaults[7C 0 0[9;18H[?12l[?25h[?25lO-LogVol00 /[22C xfs     defaults[7C 0 0[9;19H[?12l[?25h[?25l[10;28r[10;1H[L[1;29r[9;19HT-LogVol00 /[22C xfs     defaults[7C 0  [10;1H0[9;20H[?12l[?25h-LogVol00 /                       xfs     [11;62H[13;62Hp00[?25l-LogVol01 swap [19Cswap    defaults         [14;1H0 0[14;4H[K[13;22H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C00[14;1H 0[14;3H[K[13;21H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C0  [14;1H0[14;2H[K[13;20H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C0 0[14;1H[94m~                                                                              [13;19H[?12l[?25h[?25l[m-LogVol01 swap [19Cswap    defaults [7C0 0[13;79H[K[13;18H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C0 0[13;78H[K[13;17H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C0 0[13;77H[K[13;16H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C0 0[13;76H[K[13;15H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults [7C0 0[13;75H[K[13;14H[?12l[?25h[?25lG-LogVol01 swap[19C swap    defaults[7C 0 0[13;15H[?12l[?25h[?25l_-LogVol01 swap[19C swap    defaults[7C 0 0[13;16H[?12l[?25h[?25lR-LogVol01 swap[19C swap    defaults[7C 0 0[13;17H[?12l[?25h[?25lO-LogVol01 swap[19C swap    defaults[7C 0 0[13;18H[?12l[?25h[?25lO-LogVol01 swap[19C swap    defaults[7C 0 0[13;19H[?12l[?25h[?25lT-LogVol01 swap[19C swap    defaults[7C 0  [14;1H0[14;2H[K[13;20H[?12l[?25h[29;1H[K[13;19H[?25l[?12l[?25h[?25l[29;1H:[?12l[?25hwq[?25l"/etc/fstab" 11L, 475C written
+[?1l>[?12l[?25h[?1049l]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# vgs
+  VG      #PV #LV #SN Attr   VSize   VFree
+  VG_ROOT   1   2   0 wz--n- <38.97g    0 
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# lvs
+  LV       VG      Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  LogVol00 VG_ROOT -wi-ao---- <37.47g                                                    
+  LogVol01 VG_ROOT -wi-ao----   1.50g                                                    
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# vi [K/[K /etc/default/grub 
+[?1049h[?1h=[1;29r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[29;1H"/etc/default/grub" 7L, 388C[1;1HGRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnaa[7;1Hmes=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00[8;1H0 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
+[94m~                                                                              [11;1H~                                                                              [12;1H~                                                                              [13;1H~                                                                              [14;1H~                                                                              [15;1H~                                                                              [16;1H~                                                                              [17;1H~                                                                              [18;1H~                                                                              [19;1H~                                                                              [20;1H~                                                                              [21;1H~                                                                              [22;1H~                                                                              [23;1H~                                                                              [24;1H~                                                                              [25;1H~                                                                              [26;1H~                                                                              [27;1H~                                                                              [28;1H~                                                                              [1;1H[?12l[?25h
+
+
+
+
+[mGRUB_CMDLINE_LI[9;16H[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifn
+mes=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/[?25l[29;1H[1m-- INSERT --[m[29;13H[K[7;72H[?12l[?25h[?25l/LogVol000[8;1H rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;43H[K[7;71H[?12l[?25h[?25l/LogVol00  [8;1Hrd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;42H[K[7;70H[?12l[?25h[?25l/LogVol00 rr[8;1Hd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;41H[K[7;69H[?12l[?25h[?25l/LogVol00 rdd[8;1H.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;40H[K[7;68H[?12l[?25h[?25l/LogVol00 rd..[8;1Hlvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;39H[K[7;67H[?12l[?25h[?25l/LogVol00 rd.ll[8;1Hvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;38H[K[7;66H[?12l[?25h[?25l/LogVol00 rd.lvv[8;1Hm.lv=VolGroup00/LogVol01 rhgb quiet"[8;37H[K[7;65H[?12l[?25h[?25l/LogVol00 rd.lvmm[8;1H.lv=VolGroup00/LogVol01 rhgb quiet"[8;36H[K[7;64H[?12l[?25h[?25l/LogVol00 rd.lvm..[8;1Hlv=VolGroup00/LogVol01 rhgb quiet"[8;35H[K[7;63H[?12l[?25h[?25l/LogVol00 rd.lvm.ll[8;1Hv=VolGroup00/LogVol01 rhgb quiet"[8;34H[K[7;62H[?12l[?25h[?25lV/LogVol00 rd.lvm..[8;1Hlv=VolGroup00/LogVol01 rhgb quiet"[7;63H[?12l[?25h[?25lG/LogVol00 rd.lvmm[8;1H.lv=VolGroup00/LogVol01 rhgb quiet"[7;64H[?12l[?25h[?25l_/LogVol00 rd.lvv[8;1Hm.lv=VolGroup00/LogVol01 rhgb quiet"[7;65H[?12l[?25h[?25lR/LogVol00 rd.ll[8;1Hvm.lv=VolGroup00/LogVol01 rhgb quiet"[7;66H[?12l[?25h[?25lO/LogVol00 rd..[8;1Hlvm.lv=VolGroup00/LogVol01 rhgb quiet"[7;67H[?12l[?25h[?25lO/LogVol00 rdd[8;1H.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[7;68H[?12l[?25h[?25lT/LogVol00 rr[8;1Hd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[7;69H[?12l[?25h/LogVol00 
+d.lvm.lv=VolGroup00[?25l/LogVol01 rhgb quiet"[8;40H[K[8;19H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;39H[K[8;18H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;38H[K[8;17H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;37H[K[8;16H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;36H[K[8;15H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;35H[K[8;14H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;34H[K[8;13H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;33H[K[8;12H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;32H[K[8;11H[?12l[?25h[?25lG/LogVol01 rhgb quiet"[8;12H[?12l[?25h[?25l_/LogVol01 rhgb quiet"[8;13H[?12l[?25h[?25lR/LogVol01 rhgb quiet"[8;14H[?12l[?25h[?25lO/LogVol01 rhgb quiet"[8;15H[?12l[?25h[?25lO/LogVol01 rhgb quiet"[8;16H[?12l[?25h[?25lT/LogVol01 rhgb quiet"[8;17H[?12l[?25h[29;1H[K[8;16H[?25l[?12l[?25h[?25l[29;1H:[?12l[?25hwq[?25l"/etc/default/grub" 7L, 382C written
+[?1l>[?12l[?25h[?1049l]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# vi /etc/default/grub [Kvi /boot/grub2/grub.cfg 
+[?1049h[?1h=[1;29r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[29;1H"/boot/grub2/grub.cfg" 127L, 3607C[1;1H#
+# DO NOT EDIT THIS FILE
+#
+# It is automatically generated by grub2-mkconfig using templates
+# from /etc/grub.d and settings from /etc/default/grub
+#
+
+### BEGIN /etc/grub.d/00_header ###
+set pager=1
+
+if [ -s $prefix/grubenv ]; then
+  load_env
+fi
+if [ "${next_entry}" ] ; then
+   set default="${next_entry}"
+   set next_entry=
+   save_env next_entry
+   set boot_once=true
+else
+   set default="${saved_entry}"
+fi
+
+if [ x"${feature_menuentry_id}" = xy ]; then
+  menuentry_id_option="--id"
+else
+  menuentry_id_option=""
+fi[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;28r[28;1H
+[1;29r[28;1Hexport menuentry_id_option[29;1H[K[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hif [ "${prev_saved_entry}" ]; then[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hset saved_entry="${prev_saved_entry}"[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hsave_env saved_entry[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hset prev_saved_entry=[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hsave_env prev_saved_entry[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hset boot_once=true[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hfi[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hfunction savedefault {[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hif [ -z "${boot_once}" ]; then[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hsaved_entry="${chosen}"[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hsave_env saved_entry[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hfi[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H}[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hfunction load_video {[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hif [ x$feature_all_video_module = xy ]; then[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod all_video[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Helse[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod efi_gop[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod efi_uga[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod ieee1275_fb[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod vbe[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod vga[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod video_bochs[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hinsmod video_cirrus[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hfi[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H}[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hterminal_output console[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hif [ x$feature_timeout_style = xy ] ; then[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hset timeout_style=menu[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hset timeout=1[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H# Fallback normal timeout code in case the timeout_style feature is[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H# unavailable.[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Helse[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hset timeout=1[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hfi[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/00_header ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### BEGIN /etc/grub.d/00_tuned ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hset tuned_params=""[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hset tuned_initrd=""[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/00_tuned ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### BEGIN /etc/grub.d/01_users ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hif [ -f ${prefix}/user.cfg ]; then[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hsource ${prefix}/user.cfg[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hif [ -n "${GRUB2_PASSWORD}" ]; then[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hset superusers="root"[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hexport superusers[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;5Hpassword_pbkdf2 root ${GRUB2_PASSWORD}[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;3Hfi[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1Hfi[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/01_users ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### BEGIN /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;28r[1;1H[4M[1;29r[25;1Hmenuentry 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (Core)' --class centos ---[26;1Hclass gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnuu[27;1Hlinux-3.10.0-862.2.3.el7.x86_64-advanced-b60e9498-0baa-4d9f-90aa-069048217fee'  [28;1H{[25;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hload_video[28;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hset gfxpayload=keep[28;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hinsmod gzio[28;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hinsmod part_msdos[28;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hinsmod xfs[28;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hset root='hd0,msdos2'[28;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hif [ x$feature_platform_search_hint = xy ]; then[28;8H[?12l[?25h[?25l[1;28r[1;1H[2M[1;29r[27;11Hsearch --no-floppy --fs-uuid --set=root --hint='hd0,msdos2'  570897caa[28;1H-e759-4c81-90cf-389da6eee4cc[27;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Helse[?12l[?25h[?25l[1;28r[1;1H[2M[1;29r[27;11Hsearch --no-floppy --fs-uuid --set=root 570897ca-e759-4c81-90cf-389daa[28;1H6eee4cc[27;8H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;9Hfi[?12l[?25h[?25l[1;28r[1;1H[4M[1;29r[25;9Hlinux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00--[26;1HLogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 bii[27;1Hosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvmm[28;1H.lv=VolGroup00/LogVol01 rhgb quiet[25;8H[?12l[?25h linux16 /vml[?25l[1;28r[28;1H
+[1;29r[28;9Hinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[28;21H[?12l[?25h[24;8H linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup0[?25l0-LL[25;1HogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 bioo[26;1Hsdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm..[27;1Hlv=VolGroup00/LogVol01 rhgb quiet [24;77H[?12l[?25h[?25l[29;1H[1m-- INSERT --[24;75H[?12l[?25h[?25l[mup0-Loo[25;1HgVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 bioss[26;1Hdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.ll[27;1Hv=VolGroup00/LogVol01 rhgb quiet [24;74H[?12l[?25h[?25lp0-Logg[25;1HVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdd[26;1Hevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lvv[27;1H=VolGroup00/LogVol01 rhgb quiet [24;74H[?12l[?25h[?25lp0-LogVV[25;1Hol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdee[26;1Hvname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv==[27;1HVolGroup00/LogVol01 rhgb quiet [24;73H[?12l[?25h[?25l0-LogVoo[25;1Hl00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevv[26;1Hname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VV[27;1HolGroup00/LogVol01 rhgb quiet [24;73H[?12l[?25h[?25l0-LogVoll[25;1H00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnn[26;1Hame=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=Voo[27;1HlGroup00/LogVol01 rhgb quiet [24;72H[?12l[?25h[?25l-LogVol00[25;1H0 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnaa[26;1Hme=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=Voll[27;1HGroup00/LogVol01 rhgb quiet [24;72H[?12l[?25h[?25l-LogVol000[25;1H ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnamm[26;1He=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGG[27;1Hroup00/LogVol01 rhgb quiet [24;71H[?12l[?25h[?25l-LogVol00  [25;1Hro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnamee[26;1H=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGrr[27;1Houp00/LogVol01 rhgb quiet [24;70H[?12l[?25h[?25l-LogVol00 rr[25;1Ho no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname==[26;1H0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroo[27;1Hup00/LogVol01 rhgb quiet [24;69H[?12l[?25h[?25lV-LogVol00  [25;1Hro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnamee[26;1H=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGrr[27;1Houp00/LogVol01 rhgb quiet[24;70H[?12l[?25h[?25lG-LogVol000[25;1H ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnamm[26;1He=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGG[27;1Hroup00/LogVol01 rhgb quiet[24;71H[?12l[?25h[?25l_-LogVol00[25;1H0 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnaa[26;1Hme=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=Voll[27;1HGroup00/LogVol01 rhgb quiet[24;72H[?12l[?25h[?25lR-LogVoll[25;1H00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnn[26;1Hame=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=Voo[27;1HlGroup00/LogVol01 rhgb quiet[24;73H[?12l[?25h[?25lO-LogVoo[25;1Hl00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevv[26;1Hname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VV[27;1HolGroup00/LogVol01 rhgb quiet[24;74H[?12l[?25h[?25lO-LogVV[25;1Hol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdee[26;1Hvname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv==[27;1HVolGroup00/LogVol01 rhgb quiet[24;75H[?12l[?25h[?25lT-Logg[25;1HVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdd[26;1Hevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lvv[27;1H=VolGroup00/LogVol01 rhgb quiet[24;76H[?12l[?25h-Lo
+Vol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 bios
+evname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00[?25l/LogVol00 rd.lvm.lv==[27;1HVolGroup00/LogVol01 rhgb quiet [26;60H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VV[27;1HolGroup00/LogVol01 rhgb quiet [26;59H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=Voo[27;1HlGroup00/LogVol01 rhgb quiet [26;58H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=Voll[27;1HGroup00/LogVol01 rhgb quiet [26;57H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGG[27;1Hroup00/LogVol01 rhgb quiet [26;56H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGrr[27;1Houp00/LogVol01 rhgb quiet [26;55H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGroo[27;1Hup00/LogVol01 rhgb quiet [26;54H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGrouu[27;1Hp00/LogVol01 rhgb quiet [26;53H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGroupp[27;1H00/LogVol01 rhgb quiet [26;52H[?12l[?25h[?25lG/LogVol00 rd.lvm.lv=VolGrouu[27;1Hp00/LogVol01 rhgb quiet[26;53H[?12l[?25h[?25l_/LogVol00 rd.lvm.lv=VolGroo[27;1Hup00/LogVol01 rhgb quiet[26;54H[?12l[?25h[?25lR/LogVol00 rd.lvm.lv=VolGrr[27;1Houp00/LogVol01 rhgb quiet[26;55H[?12l[?25h[?25lO/LogVol00 rd.lvm.lv=VolGG[27;1Hroup00/LogVol01 rhgb quiet[26;56H[?12l[?25h[?25lO/LogVol00 rd.lvm.lv=Voll[27;1HGroup00/LogVol01 rhgb quiet[26;57H[?12l[?25h[?25lT/LogVol00 rd.lvm.lv=Voo[27;1HlGroup00/LogVol01 rhgb quiet[26;58H[?12l[?25h/LogVol00 rd.lvm.lv=V
+lGroup00[?25l/LogVol01 rhgb quiet [27;8H[?12l[?25h[?25l/LogVol01 rhgb quiet [27;7H[?12l[?25h[?25l/LogVol01 rhgb quiet lGrou[?12l[?25h[?25l/LogVol01 rhgb quiet lGro[?12l[?25h[?25l/LogVol01 rhgb quiet lGr[?12l[?25h[?25l/LogVol01 rhgb quiet lG[?12l[?25h[?25l/LogVol01 rhgb quiet l[?12l[?25h[?25l/LogVol01 rhgb quiet [?12l[?25h[?25l[26;79H//[27;1HLogVol01 rhgb quiet [26;79H[?12l[?25h[?25lGG[27;1H/LogVol01 rhgb quiet[?12l[?25h[?25l_/LogVol01 rhgb quiet_[?12l[?25h[?25lR/LogVol01 rhgb quiet_R[?12l[?25h[?25lO/LogVol01 rhgb quiet_RO[?12l[?25h[?25lO/LogVol01 rhgb quiet_ROO[?12l[?25h[?25lT/LogVol01 rhgb quiet_ROOT[?12l[?25h/LogVol01 rhgb quiet [28;58H[?25l[1;28r[28;1H
+[1;29r[28;1H}[?12l[?25h[?25l[1;28r[1;1H[3M[1;29r[26;1Hif [ "x$default" = 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (Core)' ]; then  [27;1Hdefault='Advanced options for CentOS Linux>CentOS Linux (3.10.0-862.2.3.el7.x866[28;1H_64) 7 (Core)'; fi;[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[1;1H[4M[1;29r[25;1H### BEGIN /etc/grub.d/20_linux_xen ###
+### END /etc/grub.d/20_linux_xen ###
+
+### BEGIN /etc/grub.d/20_ppc_terminfo ###[25;39H[?12l[?25h[26;37H
+[28;42H[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/20_ppc_terminfo ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### BEGIN /etc/grub.d/30_os-prober ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/30_os-prober ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H### BEGIN /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;28r[28;1H
+[1;29r[28;1H# This file provides an easy way to add custom menu entries.  Simply type the[?12l[?25h[?25l[1;28r[1;1H[2M[1;29r[27;1H# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.[27;77H[?12l[?25h[28;30H[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;28r[1;1H[2M[1;29r[28;1H### BEGIN /etc/grub.d/41_custom ###[27;1H[?12l[?25h[28;36H[?25l[1;28r[28;1H
+[1;29r[28;1Hif [ -f  ${config_directory}/custom.cfg ]; then[?12l[?25h[?25l[1;28r[1;1H[4M[1;29r[25;3Hsource ${config_directory}/custom.cfg
+elif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then
+  source $prefix/custom.cfg;
+fi[25;40H[?12l[?25h[26;66H[27;29H
+fi[?25l[1;28r[28;1H
+[1;29r[28;1H### END /etc/grub.d/41_custom ###[?12l[?25h[29;1H[K[28;33H[?25l[?12l[?25h[?25l
+:[?12l[?25hwq[?25l"/boot/grub2/grub.cfg" 127L, 3598C written
+[?1l>[?12l[?25h[?1049l]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# uname-r
+bash: uname-r: command not found
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# uname-r[K[K -r
+3.10.0-862.2.3.el7.x86_64
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# mkinitrd -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86__64.img $[K3/[K.10.[K[K[K[K[K$(uname -r)
+Executing: /usr/bin/dracut -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo *Script started on Mon 29 Aug 2022 04:10:57 AM UTC
+]0;vagrant@localhost:~[?1034h[vagrant@localhost ~]$ exit
+exit
+
+Script done on Mon 29 Aug 2022 04:11:07 AM UTC
+Script started on Mon 29 Aug 2022 04:11:20 AM UTC
+]0;vagrant@localhost:/home/vagrant[?1034h[root@localhost vagrant]# mkdir /usr/lib/dracut/modules.d/test
+]0;vagrant@localhost:/home/vagrant[root@localhost vagrant]# cd /usr/lib/dracut//[Kmodules.d/test/
+]0;vagrant@localhost:/usr/lib/dracut/modules.d/test[root@localhost test]# vi module-setup.sh
+[?1049h[?1h=[1;29r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[29;1H"module-setup.sh" [New File][2;1H[94m~                                                                              [3;1H~                                                                              [4;1H~                                                                              [5;1H~                                                                              [6;1H~                                                                              [7;1H~                                                                              [8;1H~                                                                              [9;1H~                                                                              [10;1H~                                                                              [11;1H~                                                                              [12;1H~                                                                              [13;1H~                                                                              [14;1H~                                                                              [15;1H~                                                                              [16;1H~                                                                              [17;1H~                                                                              [18;1H~                                                                              [19;1H~                                                                              [20;1H~                                                                              [21;1H~                                                                              [22;1H~                                                                              [23;1H~                                                                              [24;1H~                                                                              [25;1H~                                                                              [26;1H~                                                                              [27;1H~                                                                              [28;1H~                                                                              [1;1H[?12l[?25h[?25l[m[29;1H[97m[41mE348: No string under cursor[1;1H[?12l[?25h[?25l[m[29;1H[1m-- INSERT --[m[29;13H[K[1;1H[?12l[?25h[?25l:[?12l[?25h[?25l[1;1H[K[1;1H[?12l[?25h[?25l#[?12l[?25h[?25l![?12l[?25h[?25l/[?12l[?25h[?25lb[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l/[?12l[?25h[?25lb[?12l[?25h[?25la[?12l[?25h[?25ls[?12l[?25h[?25lh[?12l[?25h[?25l[2;1H[K[2;1H[?12l[?25h[?25l[3;1H[K[3;1H[?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25lc[?12l[?25h[?25lk[?12l[?25h[?25l([?12l[?25h[?25l)[?12l[?25h[?25l [?12l[?25h[?25l{[?12l[?25h[?25l[4;1H[K[4;1H[?12l[?25h[?25l[8C[?12l[?25h[?25lr[?12l[?25h[?25le[?12l[?25h[?25lt[?12l[?25h[?25lu[?12l[?25h[?25lr[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25l0[?12l[?25h[?25l[5;1H[K[5;1H[?12l[?25h[?25l}[?12l[?25h[?25l[6;1H[K[6;1H[?12l[?25h[?25l[7;1H[K[7;1H[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lp[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25ls[?12l[?25h[?25l([?12l[?25h[?25l)[?12l[?25h[?25l [?12l[?25h[?25l{[?12l[?25h[?25l[8;1H[K[8;1H[?12l[?25h[?25l[8C[?12l[?25h[?25lr[?12l[?25h[?25le[?12l[?25h[?25lt[?12l[?25h[?25lu[?12l[?25h[?25lr[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25l0[?12l[?25h[?25l[9;1H[K[9;1H[?12l[?25h[?25l}[?12l[?25h[?25l[10;1H[K[10;1H[?12l[?25h[?25l[11;1H[K[11;1H[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25l([?12l[?25h[?25l)[?12l[?25h[?25l [?12l[?25h[?25l{[?12l[?25h[?25l[12;1H[K[12;1H[?12l[?25h[?25l[8C[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25l_[?12l[?25h[?25lh[?12l[?25h[?25lo[?12l[?25h[?25lo[?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25lc[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25lu[?12l[?25h[?25lp[?12l[?25h[?25l [?12l[?25h[?25l0[?12l[?25h[?25l0[?12l[?25h[?25l [?12l[?25h[?25l"[?12l[?25h[?25l$[?12l[?25h[?25l{[?12l[?25h[?25lm[?12l[?25h[?25lo[?12l[?25h[?25ld[?12l[?25h[?25ld[?12l[?25h[?25li[?12l[?25h[?25lr[?12l[?25h[?25l}[?12l[?25h[?25l/[?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[?25l.[?12l[?25h[?25ls[?12l[?25h[?25lh[?12l[?25h[?25l"[?12l[?25h[?25l[13;1H[K[13;1H[?12l[?25h[?25l}[?12l[?25h[?25l:[?12l[?25h[?25l[13;2H[K[13;2H[?12l[?25h[29;1H[K[13;1H[?25l[?12l[?25h[?25l[29;1H:[?12l[?25hwq[?25l"module-setup.sh" [New] 13L, 117C written
+[?1l>[?12l[?25h[?1049l]0;vagrant@localhost:/usr/lib/dracut/modules.d/test[root@localhost test]# vi module-setup.sh[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ktest.sh
+[?1049h[?1h=[1;29r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[29;1H"test.sh" [New File][2;1H[94m~                                                                              [3;1H~                                                                              [4;1H~                                                                              [5;1H~                                                                              [6;1H~                                                                              [7;1H~                                                                              [8;1H~                                                                              [9;1H~                                                                              [10;1H~                                                                              [11;1H~                                                                              [12;1H~                                                                              [13;1H~                                                                              [14;1H~                                                                              [15;1H~                                                                              [16;1H~                                                                              [17;1H~                                                                              [18;1H~                                                                              [19;1H~                                                                              [20;1H~                                                                              [21;1H~                                                                              [22;1H~                                                                              [23;1H~                                                                              [24;1H~                                                                              [25;1H~                                                                              [26;1H~                                                                              [27;1H~                                                                              [28;1H~                                                                              [1;1H[?12l[?25h[?25l[m[29;1H[1m-- INSERT --[m[29;13H[K[1;1H[?12l[?25h[?25l#!/bin/bash[2;1H[K[3;1Hcat <<'msgend'[3;15H[K[4;1HHello! You are in dracut module![4;33H[K[5;1H ___________________[5;21H[K[6;1H< I'm dracut module >[6;22H[K[7;1H -------------------[7;21H[K[8;1H   \[8;5H[K[9;1H    \[9;6H[K[10;1H        .--.[10;13H[K[11;1H       |o_o |[11;14H[K[12;1H       |:_/ |[12;14H[K[13;1H      //   \ \[13;15H[K[14;1H     (|     | )[14;16H[K[15;1H    /'\_   _/`\[15;16H[K[16;1H    \___)=(___/[16;16H[K[17;1Hmsgend[17;7H[K[18;1Hsleep 10[18;9H[K[19;1Hecho " continuing...."[19;23H[K[19;23H[?12l[?25h[29;1H[K[19;22H[?25l[?12l[?25h[?25l[29;1H:[?12l[?25hwq[?25l[29;3H[K[29;3H[?12l[?25h[?25l[29;2H[K[29;2H[?12l[?25h [19;22H[18;8H[17;6H[16;9H)=(___[?25l/[16;15H[K[16;14H[?12l[?25h[?25l[29;1H[1m-- INSERT --[16;14H[?12l[?25h[?25l[m[16;14H[K[16;14H[?12l[?25h[?25l[16;13H[K[16;13H[?12l[?25h[?25l[16;12H[K[16;12H[?12l[?25h[?25l[16;11H[K[16;11H[?12l[?25h[?25l[16;10H[K[16;10H[?12l[?25h[?25l[16;9H[K[16;9H[?12l[?25h[?25l[16;8H[K[16;8H[?12l[?25h[?25l[16;7H[K[16;7H[?12l[?25h[?25l[16;6H[K[16;6H[?12l[?25h[?25l[16;5H[K[16;5H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[15;28r[28;1H
+[1;29r[15;5H/'\_   _/`\[28;1H[94m~                                                                              [15;16H[?12l[?25h[?25l[m[15;15H[K[15;15H[?12l[?25h[?25l[15;14H[K[15;14H[?12l[?25h[?25l[15;13H[K[15;13H[?12l[?25h[?25l[15;12H[K[15;12H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[15;8H[K[15;8H[?12l[?25h[?25l[15;7H[K[15;7H[?12l[?25h[?25l[15;6H[K[15;6H[?12l[?25h[?25l[15;5H[K[15;5H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[14;28r[28;1H
+[1;29r[14;6H(|     | )[28;1H[94m~                                                                              [14;16H[?12l[?25h[?25l[m[14;15H[K[14;15H[?12l[?25h[?25l[?12l[?25h[?25l[14;13H[K[14;13H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[14;7H[K[14;7H[?12l[?25h[?25l[14;6H[K[14;6H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[13;28r[28;1H
+[1;29r[13;7H//   \ \[28;1H[94m~                                                                              [13;15H[?12l[?25h[?25l[m[13;14H[K[13;14H[?12l[?25h[?25l[?12l[?25h[?25l[13;12H[K[13;12H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[13;8H[K[13;8H[?12l[?25h[?25l[13;7H[K[13;7H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[12;28r[28;1H
+[1;29r[12;8H|:_/ |[28;1H[94m~                                                                              [12;14H[?12l[?25h[?25l[m[12;13H[K[12;13H[?12l[?25h[?25l[?12l[?25h[?25l[12;11H[K[12;11H[?12l[?25h[?25l[12;10H[K[12;10H[?12l[?25h[?25l[12;9H[K[12;9H[?12l[?25h[?25l[12;8H[K[12;8H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[11;28r[28;1H
+[1;29r[11;8H|o_o |[28;1H[94m~                                                                              [11;14H[?12l[?25h[?25l[m[11;13H[K[11;13H[?12l[?25h[?25l[?12l[?25h[?25l[11;11H[K[11;11H[?12l[?25h[?25l[11;10H[K[11;10H[?12l[?25h[?25l[11;9H[K[11;9H[?12l[?25h[?25l[11;8H[K[11;8H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[10;28r[28;1H
+[1;29r[10;9H.--.[28;1H[94m~                                                                              [10;13H[?12l[?25h[?25l[m[10;12H[K[10;12H[?12l[?25h[?25l[10;11H[K[10;11H[?12l[?25h[?25l[10;10H[K[10;10H[?12l[?25h[?25l[10;9H[K[10;9H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l⣿⣿⡿⣫⣾⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀[?12l[?25h[?25l[11;28r[11;1H[L[1;29r[10;20H⣀⣀⣀⣀⠄⠄⠄⠄⠄⠄
+⣿⡇⠱⠉⠁⠄⠄⠄⠄[?12l[?25h[?25l[12;28r[12;1H[2L[1;29r[11;10H⠄⠄⢀⣀⣤⣶⣶⣿⣿⣿⣿⣿⣿⣿⣦⠄⠄⠄⠄⠄
+⣿⡇⠄⠄⠄⠄⠄⢀⣠⣛⡩⣩⣭⡹⣿⣿⣿⣿⠞⣛⣛⣛⡲⣿⡇⠄⠄⠄⠄
+⣿⡇⠄⠄⠄⡾⣡⣾⣿[?12l[?25h[?25l[14;28r[14;1H[L[1;29r[13;10H⣷⣹⣿⣿⡿⣪⡻⠟⣱⣿⣿⣿⣿⣿⣷⡹⠄⠄⠄⠄
+[?12l[?25h[?25l⣿⡇⠄⠄⣼⡇⣿⣻⣿⠟⡛⢿⣿⣾⣿⡇⢰⣍⢻⡿[?12l[?25h[?25l[15;28r[15;1H[2L[1;29r[14;21H⠛⢿⣿⡭⣿⣷⠄⠄⠄
+⣿⣧⣄⡀⣿⡇⣮⣽⣿⣮⣉⣾⣿⣿⣿⣇⡸⣿⣿⣆⠛⣰⣿⣾⡿⣿⠄⠄⠄
+⣿⣇⡼[?12l[?25h[?25l[17;28r[17;1H[L[1;29r[16;4H⣄⣿⣿⡄⠙⢿⣏⣿⣿⡮⠁⣉⣾⣷⡈⠃⢿⣿⣬⡭⠝⣀⣿⠄⠄⠐
+⡆⡇⣹⣿⣿⣿⣿⡿⠓⠛⣉⣉⣉⣉⣙[?12l[?25h[?25l[18;28r[18;1H[L[1;29r[17;16H⣛⠓⠾⣟⢿⣿⣿⣿⣿⣿⣿⣿⠇⠄⠙
+⠁⡇⣞⣿⡿[?12l[?25h[?25l⠋⠁⠄⠄⠈⠉⠙⠛⠛⠻⠿⠿⠿⣶⣌⠻⣿⣿⣿⣿⣿[?12l[?25h[?25l[19;28r[19;1H[2L[1;29r[18;27H⢗⢴⣆⢣
+⠸⣇⡻⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢻⣷⡌⢿⣿⣿⣿⢸⠼⣣⣾
+⣦⡀⠄⠄⠄⠄⠄[?12l[?25h[?25l⠄⠄⠄⠄⢀⠄⠄⠄⠄⠄⠄⠄⠄⠙⠛⠈⣿⡫⡼⢠⣾[?12l[?25h[?25l[21;28r[21;1H[L[1;29r[20;29H⣿⣿
+⣿⣇⠄⣀⣠⡀⠄⠄⠴⠾⠿⠿⠶⠶⣦⣤⡀⠄[?12l[?25h[?25l[22;28r[22;1H[L[1;29r[21;19H⠄⠄⠄⠄⠄⢨⠯⢁⣿⣿⣿⣿
+⣿⣿⣦⢒⠤⣅⡶⣶[?12l[?25h[?25l⣶⣾⣿⣿⣿⣷⣶⣮⣍⠢⠄⠄⠄⠄⠄⠐⢠⣾⣿⣿[?12l[?25h[?25l[23;28r[23;1H[L[1;29r[22;29H⣿⣿
+⣿⣿⣿⣧⡐⠫⣉⡿⣬⡞⢿⣿⢯⠽⣶⡽⢟⣛⢖⣨⣛⠛⢃⣴⣿⣿⣿⣿⣿⣿[?12l[?25h[29;1H[K[23;30H[?25l[?12l[?25h[?25l[29;1H:[?12l[?25hwq[?25l"test.sh" [New] 26L, 1428C written
+[?1l>[?12l[?25h[?1049l]0;vagrant@localhost:/usr/lib/dracut/modules.d/test[root@localhost test]# dracut -f -v[K[K[K[K[K[K[K[K[K[K[K[Kvi test.shmodule-setup.shcd /usr/lib/dracut/modules.d/test/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir /usr/lib/dracut/modules.d/test[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Creboot[Kmkinitrd -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64..img $(uname -r)[A[C[C[C[C[C[C[Cuname -r[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkinitrd -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64..img $(uname -r)
+Executing: /usr/bin/dracut -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** Constructing AuthenticAMD.bin ****
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+]0;vagrant@localhost:/usr/lib/dracut/modules.d/test[root@localhost test]# dracut -f -v
+Executing: /usr/bin/dracut -f -v
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** Constructing AuthenticAMD.bin ****
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+]0;vagrant@localhost:/usr/lib/dracut/modules.d/test[root@localhost test]# exit
+exit
+
+Script done on Mon 29 Aug 2022 04:20:45 AM UTC
+Script started on Mon 29 Aug 2022 04:59:26 AM UTC
+]0;vagrant@localhost:/usr/lib/dracut/modules.d/01test[?1034h[root@localhost 01test]# shutdown nowvi /usr/lib/dracut/modules.d/test/test.sh [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clsinitrd -m /boot/initramfs-3.10.0-862.2.3.el7.x86_64.iimg
+Image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img: 14M
+========================================================================
+Version: dracut-033-535.el7
+
+dracut modules:
+bash
+test
+nss-softokn
+i18n
+drm
+plymouth
+dm
+kernel-modules
+lvm
+qemu
+resume
+rootfs-block
+terminfo
+udev-rules
+biosdevname
+systemd
+usrmount
+base
+fs-lib
+shutdown
+========================================================================
+]0;vagrant@localhost:/usr/lib/dracut/modules.d/01test[root@localhost 01test]# lsinitrd -m /boot/initramfs-3.10.0-862.2.3.el7.x86_64.iimg[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cshutdown now[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clsinitrd -m /boot/initramfs-3.10.0-862.2.3.el7.x86_64.iimg | grep test
+[01;31m[Ktest[m[K
+]0;vagrant@localhost:/usr/lib/dracut/modules.d/01test[root@localhost 01test]# lsinitrd -m /boot/initramfs-3.10.0-862.2.3.el7.x86_64.iimg | grep test[A[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit
+exit
+
+Script done on Mon 29 Aug 2022 04:59:39 AM UTC
